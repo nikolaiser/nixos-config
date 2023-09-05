@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let 
+{pkgs, ...}: let
   username = "nikolaiser";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
@@ -10,13 +8,12 @@ let
     nerdfonts
     nix-init
     telegram-desktop
-    wezterm    
+    wezterm
     xclip
   ];
-
 in {
   programs.home-manager.enable = true;
-  
+
   imports = builtins.concatMap import [
     ./programs
     ./modules

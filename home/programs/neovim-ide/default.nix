@@ -1,6 +1,8 @@
-{ lib, pkgs, ... }:
-
 {
+  lib,
+  pkgs,
+  ...
+}: {
   programs.neovim-ide = {
     enable = true;
     settings = {

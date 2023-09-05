@@ -1,8 +1,9 @@
-{ inputs, system, ...}:
-
-with inputs;
-
-let
+{
+  inputs,
+  system,
+  ...
+}:
+with inputs; let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
@@ -12,11 +13,10 @@ let
     neovim-flake.nixosModules.${system}.hm
     ../home/home.nix
   ];
-
 in {
-  nikolaiser-home = home-manager.lib.homeManagerConfiguration  {
+  nikolaiser-home = home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
 
-    modules = [{ inherit imports; }];
+    modules = [{inherit imports;}];
   };
 }

@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.dconf.enable = true;
 
   services = {
@@ -10,7 +13,7 @@
 
     dbus = {
       enable = true;
-      packages = [ pkgs.dconf ];
+      packages = [pkgs.dconf];
     };
 
     xserver = {
@@ -37,7 +40,6 @@
         enable = true;
         enableContribAndExtras = true;
       };
-
     };
   };
 
@@ -47,7 +49,7 @@
       General = {
         Enable = "Source,Sink,Media,Socket";
       };
-   };
+    };
   };
 
   services.blueman.enable = true;

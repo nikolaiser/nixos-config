@@ -1,11 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-
-{ config, pkgs, inputs, ... }:
-
 {
-
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./wm/xmonad.nix
   ];
@@ -27,13 +28,13 @@
   programs.zsh.enable = true;
 
   users.users.nikolaiser = {
-     isNormalUser = true;
-     home = "/home/nikolaiser";
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       firefox
-       git
-       tree
+    isNormalUser = true;
+    home = "/home/nikolaiser";
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      firefox
+      git
+      tree
     ];
     shell = pkgs.zsh;
   };
@@ -45,19 +46,18 @@
   };
 
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = ["nvidia"];
   };
 
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
 
-    open= false;
+    open = false;
 
     nvidiaSettings = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-
   };
 
   services.pipewire = {
@@ -77,6 +77,4 @@
   ];
 
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

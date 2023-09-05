@@ -1,8 +1,8 @@
 [
-./git
-./neovim-ide
-./tms
-./tmux
-./xmonad
-./zsh
+  ./git
+  ./neovim-ide
+  ./tms
+  ./tmux
+  ./xmonad
+  ./zsh
 ]
