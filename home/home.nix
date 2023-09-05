@@ -6,12 +6,12 @@ let
   configHome = "${homeDirectory}/.config";
 
   defaultPkgs = with pkgs; [
-    wezterm    
+    gnome.nautilus
+    nerdfonts
     nix-init
     telegram-desktop
+    wezterm    
     xclip
-    nerdfonts
-    gnome.nautilus
   ];
 
 in {

@@ -19,6 +19,7 @@ in
     networkmanagerapplet   # networkmanager applet
     xorg.xrandr            # display manager (X Resize and Rotate protocol)
     xorg.xmessage
+    xorg.xorgserver
     dmenu
     gmrun
     pavucontrol

@@ -27,13 +27,13 @@ in
     aliases = {
       amend = "commit --amend -m";
       br = "branch";
-      gco = "checkout";
-      gst = "status";
-      gls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
-      gll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
-      gcm = "commit -m";
-      gca = "commit -am";
-      gdc = "diff --cached";
+      co = "checkout";
+      st = "status";
+      ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+      ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
+      cm = "commit -m";
+      ca = "commit -am";
+      dc = "diff --cached";
     };
     extraConfig = gitConfig;
     ignores = [

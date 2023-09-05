@@ -20,6 +20,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   time.hardwareClockInLocalTime = true;
+  time.timeZone = "Europe/Berlin";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -31,8 +32,8 @@
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        firefox
-       tree
        git
+       tree
     ];
     shell = pkgs.zsh;
   };
@@ -43,7 +44,9 @@
     driSupport32Bit = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
