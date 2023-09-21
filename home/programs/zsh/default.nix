@@ -1,28 +1,41 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
     shellAliases = {
+      ls = "${pkgs.eza}/bin/eza";
       la = "ls -la";
+      tree = "${pkgs.eza}/bin/eza -T";
+      htop = "${pkgs.bottom}/bin/btm";
+      cat = "bat";
+      nano = "micro";
       ga = "git add";
       gc = "git commit";
       gco = "git checkout";
       gp = "git push";
+      ps = "${pkgs.procs}/bin/procs";
     };
+
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+
+    historySubstringSearch.enable = true;
 
     zplug = {
       enable = true;
       plugins = [
-        {name = "zsh-users/zsh-autosuggestions";} # Simple plugin installation
-        {name = "zsh-users/zsh-syntax-highlighting";}
-        {name = "spaceship-prompt/spaceship-prompt";}
+        { name = "spaceship-prompt/spaceship-prompt"; }
       ];
     };
 
-    initExtra = ''if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi'';
+    initExtra = ''
+      if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
+      SPACESHIP_PROMPT_ASYNC=false
+    '';
   };
 }

@@ -1,10 +1,12 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   extra = ''
   '';
 
   polybarOpts = ''
   '';
-in {
+in
+{
   xresources.properties = {
     "Xft.dpi" = 102;
   };

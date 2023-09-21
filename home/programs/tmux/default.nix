@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -24,6 +24,13 @@
 
       set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-256color:RGB"
+
+      set-option -g history-limit 50000
+
+      set -g allow-passthrough on
+
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
 
       resurrect_dir="$HOME/.tmux/resurrect"
       set -g @resurrect-dir $resurrect_dir

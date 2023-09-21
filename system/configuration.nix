@@ -1,11 +1,9 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     ./wm/xmonad.nix
@@ -23,14 +21,14 @@
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/Berlin";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.zsh.enable = true;
 
   users.users.nikolaiser = {
     isNormalUser = true;
     home = "/home/nikolaiser";
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       git
@@ -46,7 +44,7 @@
   };
 
   services.xserver = {
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware.nvidia = {
@@ -75,6 +73,8 @@
     rustc
     cargo
   ];
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 }

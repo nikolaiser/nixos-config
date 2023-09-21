@@ -5,4 +5,5 @@
   ./tmux
   ./xmonad
   ./zsh
+  ./rofi
 ]
