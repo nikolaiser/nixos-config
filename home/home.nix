@@ -28,6 +28,7 @@ let
     nix-init
     procs
     ripgrep
+    sbt
     scala-cli
     scala_3
     telegram-desktop
