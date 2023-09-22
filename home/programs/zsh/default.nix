@@ -36,6 +36,10 @@
     initExtra = ''
       if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
       SPACESHIP_PROMPT_ASYNC=false
+
+      tmux-gc() {
+        tmux ls | rg '^(\d+):.*' -r '$1' | xargs -n1 tmux kill-session -t
+      }
     '';
   };
 }
