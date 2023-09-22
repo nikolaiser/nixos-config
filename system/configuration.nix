@@ -6,17 +6,11 @@
 , ...
 }: {
   imports = [
+    ./bootloader/grub.nix
+    ./video/nvidia.nix
     ./wm/xmonad.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.gfxmodeEfi = "1280x1024x32,auto";
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
 
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/Berlin";
@@ -37,26 +31,6 @@
     shell = pkgs.zsh;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
-  };
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-
-    open = false;
-
-    nvidiaSettings = true;
-
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   services.pipewire = {
     enable = true;
