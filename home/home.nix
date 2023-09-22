@@ -21,19 +21,20 @@ let
     fzf
     ghcWithPkgs
     gnome.nautilus
+    jq
+    manix
     micro # nano alternative
     nerdfonts
     nix-init
+    procs
     ripgrep
+    scala-cli
+    scala_3
     telegram-desktop
+    tldr
     wezterm
     xclip
-    jq
-    tldr
-    procs
     yazi
-    scala_3
-    scala-cli
   ];
 in
 {
