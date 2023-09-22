@@ -32,6 +32,8 @@ let
     tldr
     procs
     yazi
+    scala_3
+    scala-cli
   ];
 in
 {

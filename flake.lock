@@ -588,19 +588,21 @@
         "trouble-nvim": "trouble-nvim",
         "vim-illuminate": "vim-illuminate",
         "vim-tmux-navigator": "vim-tmux-navigator",
+        "vim-visual-multi": "vim-visual-multi",
         "which-key": "which-key"
       },
       "locked": {
-        "dirtyRev": "ca35271091639f2c461f9312169b08f6b89cb103-dirty",
-        "dirtyShortRev": "ca35271-dirty",
-        "lastModified": 1694257585,
-        "narHash": "sha256-q/FOamLtMQVS+SG1JxoOkZ6P4CQ1NYOPW2rGAJtInS8=",
-        "type": "git",
-        "url": "file:///home/nikolaiser/Documents/nvim-config"
+        "lastModified": 1695385444,
+        "narHash": "sha256-Ur+zdM6S+EuAzOYgODzNrjXwI76fh0YsdWYeA6iy/Gk=",
+        "owner": "nikolaiser",
+        "repo": "nvim-config",
+        "rev": "fa95ab5022c14b73d44a9524afaf447d7cea5854",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/nikolaiser/Documents/nvim-config"
+        "owner": "nikolaiser",
+        "repo": "nvim-config",
+        "type": "github"
       }
     },
     "neovim-flake_2": {
@@ -747,11 +749,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1694959747,
-        "narHash": "sha256-CXQ2MuledDVlVM5dLC4pB41cFlBWxRw4tCBsFrq3cRk=",
+        "lastModified": 1695145219,
+        "narHash": "sha256-Eoe9IHbvmo5wEDeJXKFOpKUwxYJIOxKUesounVccNYk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "970a59bd19eff3752ce552935687100c46e820a5",
+        "rev": "5ba549eafcf3e33405e5f66decd1a72356632b96",
         "type": "github"
       },
       "original": {
@@ -1148,6 +1150,22 @@
       "original": {
         "owner": "christoomey",
         "repo": "vim-tmux-navigator",
+        "type": "github"
+      }
+    },
+    "vim-visual-multi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1663168587,
+        "narHash": "sha256-Xq2guPaVNRZu8vnkEr1dYZrjou0QBbpXxgNqSBn0HTY=",
+        "owner": "mg979",
+        "repo": "vim-visual-multi",
+        "rev": "724bd53adfbaf32e129b001658b45d4c5c29ca1a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mg979",
+        "repo": "vim-visual-multi",
         "type": "github"
       }
     },
