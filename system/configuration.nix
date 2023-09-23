@@ -6,8 +6,6 @@
 , ...
 }: {
   imports = [
-    ./bootloader/grub.nix
-    ./video/nvidia.nix
     ./wm/xmonad.nix
   ];
 

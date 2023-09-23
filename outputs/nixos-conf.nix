@@ -1,8 +1,8 @@
-{
-  inputs,
-  system,
-  ...
-}: let
+{ inputs
+, system
+, ...
+}:
+let
   inherit (inputs.nixpkgs.lib) nixosSystem;
 
   lib = inputs.nixpkgs.lib;
@@ -12,30 +12,47 @@
     config.allowUnfree = true;
   };
 
-  alienModule = {
-    _,
-    s,
-    ...
-  }: {
-    environment.systemPackages = with inputs.nix-alien.packages.${system}; [
-      nix-alien
-    ];
-    # Optional, needed for `nix-alien-ld`
-    programs.nix-ld.enable = true;
-  };
+  alienModule =
+    { _
+    , s
+    , ...
+    }: {
+      environment.systemPackages = with inputs.nix-alien.packages.${system}; [
+        nix-alien
+      ];
+      # Optional, needed for `nix-alien-ld`
+      programs.nix-ld.enable = true;
+    };
 
   alejandraModule = {
-    environment.systemPackages = [inputs.alejandra.defaultPackage.${system}];
+    environment.systemPackages = [ inputs.alejandra.defaultPackage.${system} ];
   };
-in {
+in
+{
   home-desktop = nixosSystem {
     inherit lib pkgs system;
-    specialArgs = {inherit inputs;};
+    specialArgs = { inherit inputs; };
     modules = [
       alienModule
       alejandraModule
       ../system/machine/home-desktop
       ../system/configuration.nix
+      ../system/bootloader/grub.nix
+      ../system/video/nvidia.nix
+    ];
+  };
+
+  work-thinkpad = nixosSystem {
+    inherit lib pkgs system;
+    specialArgs = { inherit inputs; };
+    modules = [
+      alienModule
+      alejandraModule
+      ../system/machine/work-thinkpad
+      ../system/configuration.nix
+      ../system/bootloader/systemd.nix
+      ../system/encryption/work.nix
+      ../system/video/intel.nix
     ];
   };
 }
