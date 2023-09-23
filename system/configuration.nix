@@ -44,6 +44,7 @@
   environment.systemPackages = with pkgs; [
     rustc
     cargo
+    git
   ];
 
   virtualisation.docker.enable = true;
