@@ -1,9 +1,11 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../../autorandr/work-thinkpad.nix
   ];
 
   #networking.wireless.enable = true;

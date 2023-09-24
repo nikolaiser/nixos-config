@@ -1,15 +1,13 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   username = "nikolaiser";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
 
-
-  ghcWithPkgs = (pkgs.haskellPackages.ghcWithPackages (hpkgs: [
+  ghcWithPkgs = pkgs.haskellPackages.ghcWithPackages (hpkgs: [
     hpkgs.xmobar
     hpkgs.xmonad
     hpkgs.xmonad-contrib
-  ]));
+  ]);
 
   defaultPkgs = with pkgs; [
     arandr
@@ -36,9 +34,9 @@ let
     wezterm
     xclip
     yazi
+    flameshot
   ];
-in
-{
+in {
   programs.home-manager.enable = true;
 
   imports = builtins.concatMap import [

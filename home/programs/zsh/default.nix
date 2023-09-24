@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }: {
   programs.zsh = {
     enable = true;
@@ -29,7 +30,7 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "spaceship-prompt/spaceship-prompt"; }
+        {name = "spaceship-prompt/spaceship-prompt";}
       ];
     };
 

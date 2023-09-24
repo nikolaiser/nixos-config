@@ -11,7 +11,9 @@ import Data.Map qualified as M
 import Data.Monoid
 import System.Exit
 import XMonad
+import XMonad.Hooks.Rescreen
 import XMonad.StackSet qualified as W
+import XMonad.Util.SpawnOnce (spawnOnce)
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -59,6 +61,11 @@ myFocusedBorderColor = "#ff0000"
 --
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
   M.fromList $
+    -- launch a terminal
+    -- launch a terminal
+    -- launch a terminal
+    -- launch a terminal
+
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf),
       -- launch dmenu
@@ -108,9 +115,27 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- Restart xmonad
       ((modm, xK_q), spawn "xmonad --recompile; xmonad --restart"),
       -- Run xmessage with a summary of the default keybindings (useful for beginners)
-      ((modm .|. shiftMask, xK_slash), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+      ((modm .|. shiftMask, xK_slash), spawn ("echo \"" ++ help ++ "\" | xmessage -file -")),
+      ((modm, xK_s), spawn "flameshot gui")
     ]
       ++
+      --
+      --
+      --
+      --
+      -- mod-[1..9], Switch to workspace N
+      -- mod-[1..9], Switch to workspace N
+      -- mod-[1..9], Switch to workspace N
+      -- mod-[1..9], Switch to workspace N
+      -- mod-shift-[1..9], Move client to workspace N
+      -- mod-shift-[1..9], Move client to workspace N
+      -- mod-shift-[1..9], Move client to workspace N
+      -- mod-shift-[1..9], Move client to workspace N
+      --
+      --
+      --
+      --
+
       --
       -- mod-[1..9], Switch to workspace N
       -- mod-shift-[1..9], Move client to workspace N
@@ -121,8 +146,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       ]
       ++
       --
+      --
+      --
+      -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
+      -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
       -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
       -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+      -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+      -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+      --
+      --
       --
       [ ((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0 ..],
@@ -231,14 +264,15 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = do
+  spawn "autorandr --change"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad defaults
+main = xmonad $ rescreenHook rescreenCfg defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -321,3 +355,15 @@ help =
       "mod-button2  Raise the window to the top of the stack",
       "mod-button3  Set the window to floating mode and resize by dragging"
     ]
+
+rescreenCfg =
+  def
+    { -- afterRescreenHook = myAfterRescreenHook,
+      randrChangeHook = myRandrChangeHook
+    }
+
+-- myAfterRescreenHook :: X ()
+-- myAfterRescreenHook = updateSBs xmobarSpawner
+
+myRandrChangeHook :: X ()
+myRandrChangeHook = spawn "autorandr --change"

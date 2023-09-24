@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -37,13 +37,13 @@
       set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
       run-shell ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/resurrect.tmux
 
+      set -g @dracula-plugins "battery time"
       set -g @dracula-show-powerline true
       set -g @dracula-show-flags true
       set -g @dracula-show-location false
       set -g @dracula-show-fahrenheit false
       set -g @dracula-show-left-icon session
       set -g status-position top
-      set -g @dracula-plugins "git, time"
       run-shell ${pkgs.tmuxPlugins.dracula}/share/tmux-plugins/dracula/dracula.tmux
 
       set -g @continuum-restore 'on'

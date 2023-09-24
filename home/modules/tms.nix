@@ -1,7 +1,8 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.programs.tms;
@@ -32,17 +33,16 @@ with lib; let
       description = "A cli tool for opening git repos as tmux sessions";
       homepage = "https://github.com/jrmoulton/tmux-sessionizer";
       license = licenses.mit;
-      maintainers = with maintainers; [ ];
+      maintainers = with maintainers; [];
     };
   };
-in
-{
+in {
   options.programs.tms = {
     enable = mkEnableOption "Tmux Sessionizer";
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ package ];
+    home.packages = [package];
 
     xdg.configFile."tms/default-config.toml" = {
       text = "search_paths = ['${config.home.homeDirectory}/Documents']";

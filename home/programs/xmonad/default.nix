@@ -1,14 +1,13 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   extra = ''
   '';
 
   polybarOpts = ''
   '';
-in
-{
+in {
   xresources.properties = {
     "Xft.dpi" = 102;
+    "Xcursor*theme" = "Vanilla-DMZ-AA";
   };
 
   home.packages = with pkgs; [
