@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     ./hardware-configuration.nix
@@ -11,4 +10,5 @@
   #networking.wireless.enable = true;
   #networking.wireless.userControlled.enable = true;
   networking.networkmanager.enable = true;
+  networking.hostName = "ri-t-0929";
 }
