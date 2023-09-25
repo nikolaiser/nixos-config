@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   username = "nikolaiser";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
@@ -16,6 +17,7 @@
     docker-compose
     eza # better ls
     fd
+    flameshot
     fzf
     ghcWithPkgs
     gnome.nautilus
@@ -29,14 +31,15 @@
     sbt
     scala-cli
     scala_3
+    slack
     telegram-desktop
     tldr
     wezterm
     xclip
     yazi
-    flameshot
   ];
-in {
+in
+{
   programs.home-manager.enable = true;
 
   imports = builtins.concatMap import [
