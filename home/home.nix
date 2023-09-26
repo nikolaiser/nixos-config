@@ -15,6 +15,7 @@ let
     bat # cat alternative
     bottom # alternative to htop
     docker-compose
+    discord
     eza # better ls
     fd
     flameshot
@@ -37,6 +38,8 @@ let
     wezterm
     xclip
     yazi
+    qpdfview
+    qimgv
   ];
 in
 {
@@ -51,6 +54,14 @@ in
   xdg = {
     inherit configHome;
     enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        pdf = "qpdfview";
+        jpg = "qimgv";
+        png = "qimgv";
+      };
+    };
   };
 
   home = {
