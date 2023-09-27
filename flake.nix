@@ -25,7 +25,8 @@
     };
 
     hacl = {
-      url = git+file:///home/nikolaiser/Documents/hacl;
+      #url = git+file:///home/nikolaiser/Documents/hacl;
+      url = github:nikolaiser/hacl;
     };
   };
 
