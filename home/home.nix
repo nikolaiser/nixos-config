@@ -42,6 +42,7 @@ let
     qimgv
     rustfmt
     gcc
+    kubectl
   ];
 in
 {
