@@ -1,7 +1,6 @@
-{
-  inputs,
-  system,
-  ...
+{ inputs
+, system
+, ...
 }:
 with inputs; let
   pkgs = import nixpkgs {
@@ -11,12 +10,14 @@ with inputs; let
 
   imports = [
     neovim-flake.nixosModules.${system}.hm
+    hacl.nixosModules.${system}.hm
     ../home/home.nix
   ];
-in {
+in
+{
   nikolaiser-home = home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
 
-    modules = [{inherit imports;}];
+    modules = [{ inherit imports; }];
   };
 }

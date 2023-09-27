@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   username = "nikolaiser";
   homeDirectory = "/home/${username}";
@@ -40,6 +40,8 @@ let
     yazi
     qpdfview
     qimgv
+    rustfmt
+    gcc
   ];
 in
 {

@@ -1,0 +1,3 @@
+{
+  programs.hacl.enable = true;
+}

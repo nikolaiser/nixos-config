@@ -7,4 +7,5 @@
   ./tmux
   ./xmonad
   ./zsh
+  ./hacl
 ]
