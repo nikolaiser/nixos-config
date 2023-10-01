@@ -378,14 +378,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-Aankd1J8sTRWVuDIbTV7w4dim4JzTDkklEL49XHclcY=",
-        "type": "git",
-        "url": "file:///home/nikolaiser/Documents/hacl"
+        "lastModified": 1695806356,
+        "narHash": "sha256-VgVaNgtLcXtqBIeqkeQyBid5hZUA7cjNXQlRnlHEDqw=",
+        "owner": "nikolaiser",
+        "repo": "hacl",
+        "rev": "0a8fa713556731dcc2d11740a4c9a030d74526c1",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/nikolaiser/Documents/hacl"
+        "owner": "nikolaiser",
+        "repo": "hacl",
+        "type": "github"
       }
     },
     "haskell-flake": {
