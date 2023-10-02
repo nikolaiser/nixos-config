@@ -43,6 +43,12 @@ let
     rustfmt
     gcc
     kubectl
+    chromium
+    (openfortivpn.overrideAttrs (
+      old: {
+        src = builtins.fetchTarball https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.20.4.tar.gz;
+      }
+    ))
   ];
 in
 {
