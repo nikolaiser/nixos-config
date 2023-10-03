@@ -629,11 +629,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1695750947,
-        "narHash": "sha256-93x6GCaAlGe9NoSt7pMAq4e3SMbmo47DX/TtyuEPja4=",
+        "lastModified": 1696342832,
+        "narHash": "sha256-xSfWLnHun3vJUAt3Qsed+lfOhQ0zYHJKd1kgeu8KAUk=",
         "owner": "nikolaiser",
         "repo": "nvim-config",
-        "rev": "e3cd2865d3f3275fc6218b2a9489912d17259c5d",
+        "rev": "e2fade72ac8ece045cb8eaf3ada90dedcb4c3f81",
         "type": "github"
       },
       "original": {
