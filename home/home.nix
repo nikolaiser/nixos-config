@@ -10,46 +10,56 @@ let
     hpkgs.xmonad-contrib
   ]);
 
-  defaultPkgs = with pkgs; [
-    arandr
-    bat # cat alternative
-    bottom # alternative to htop
-    docker-compose
-    discord
-    eza # better ls
-    fd
-    flameshot
-    fzf
-    ghcWithPkgs
-    gnome.nautilus
-    jq
-    manix
-    micro # nano alternative
-    nerdfonts
-    nix-init
-    procs
-    ripgrep
-    sbt
-    scala-cli
-    scala_3
-    slack
-    telegram-desktop
-    tldr
-    wezterm
-    xclip
-    yazi
-    qpdfview
-    qimgv
-    rustfmt
-    gcc
-    kubectl
-    chromium
-    (openfortivpn.overrideAttrs (
-      old: {
-        src = builtins.fetchTarball https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.20.4.tar.gz;
-      }
-    ))
-  ];
+  pinnedForti = pkgs.openfortivpn.overrideAttrs (
+    old: {
+      src = builtins.fetchTarball {
+        url = "https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.20.4.tar.gz";
+        sha256 = "1dzw16ndvghkkhq8z5w6vyxblrjkmns0mfh8r6z8q4r95dal59i4";
+      };
+    }
+  );
+
+  defaultPkgs = with pkgs;
+    [
+      arandr
+      bat # cat alternative
+      bottom # alternative to htop
+      chromium
+      discord
+      docker-compose
+      eza # better ls
+      fd
+      flameshot
+      fzf
+      gcc
+      ghcWithPkgs
+      gnome.nautilus
+      helm
+      jq
+      kubectl
+      kubectx
+      manix
+      micro # nano alternative
+      minikube
+      nerdfonts
+      nix-init
+      pinnedForti
+      procs
+      qimgv
+      qpdfview
+      ripgrep
+      rustfmt
+      sbt
+      scala-cli
+      scala_3
+      slack
+      sops
+      telegram-desktop
+      tldr
+      wezterm
+      xclip
+      yazi
+    ];
 in
 {
   programs.home-manager.enable = true;
