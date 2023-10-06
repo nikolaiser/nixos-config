@@ -28,6 +28,11 @@
       #url = git+file:///home/nikolaiser/Documents/hacl;
       url = github:nikolaiser/hacl;
     };
+
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:

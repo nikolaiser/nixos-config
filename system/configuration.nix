@@ -45,7 +45,14 @@
     git
   ];
 
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk17;
+  };
+
   virtualisation.docker.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
+
+  programs.nix-ld.enable = true;
 }

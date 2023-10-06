@@ -49,7 +49,6 @@ let
       qpdfview
       ripgrep
       rustfmt
-      sbt
       scala-cli
       scala_3
       slack
@@ -59,10 +58,15 @@ let
       wezterm
       xclip
       yazi
+      (sbt.override { jre = jdk17; })
+      dig
+      util-linux
+      mongosh
     ];
 in
 {
   programs.home-manager.enable = true;
+
 
   imports = builtins.concatMap import [
     ./programs
