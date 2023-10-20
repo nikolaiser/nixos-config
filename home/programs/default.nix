@@ -6,6 +6,6 @@
   ./tms
   ./tmux
   ./xmonad
-  ./zsh
+  ./fish
   ./hacl
 ]

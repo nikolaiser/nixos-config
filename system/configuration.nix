@@ -14,7 +14,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   users.users.nikolaiser = {
     isNormalUser = true;
@@ -25,7 +25,7 @@
       git
       tree
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   services.pipewire = {
