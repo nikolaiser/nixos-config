@@ -2,10 +2,10 @@
   ./git
   ./mcfly
   ./neovim-ide
-  ./rofi
+  ./wofi
   ./tms
   ./tmux
-  ./xmonad
+  ./hyprland
   ./fish
   ./hacl
 ]

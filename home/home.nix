@@ -29,7 +29,6 @@ let
       docker-compose
       eza # better ls
       fd
-      flameshot
       fzf
       gcc
       ghcWithPkgs
@@ -62,6 +61,7 @@ let
       dig
       util-linux
       mongosh
+      pavucontrol
     ];
 in
 {

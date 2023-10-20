@@ -3,16 +3,21 @@
 # and in the NixOS manual (accessible by running `nixos-help`).
 { config
 , pkgs
+, inputs
 , ...
 }: {
   imports = [
-    ./wm/xmonad.nix
+    ./wm/hyprland.nix
   ];
 
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/Berlin";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
   programs.fish.enable = true;
 
