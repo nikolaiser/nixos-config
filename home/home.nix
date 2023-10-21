@@ -31,6 +31,7 @@ let
       fd
       fzf
       gcc
+      go
       ghcWithPkgs
       gnome.nautilus
       helm

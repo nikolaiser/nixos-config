@@ -40,7 +40,6 @@ in
       ../system/bootloader/grub.nix
       ../system/video/nvidia.nix
       inputs.nix-ld.nixosModules.nix-ld
-      { programs.nix-ld.dev.enable = true; }
     ];
   };
 
