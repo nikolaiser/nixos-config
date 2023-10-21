@@ -7,6 +7,7 @@
     wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
     ];
   };
 
@@ -43,17 +44,12 @@
         enable = true;
       };
 
-      nvidiaPatches = true;
+      enableNvidiaPatches = true;
     };
 
     # monitor backlight control
     light.enable = true;
 
-    # thunar file manager(part of xfce) related options
-    thunar.plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -75,12 +71,10 @@
 
     # audio
     alsa-utils # provides amixer/alsamixer/...
-    mpd # for playing system sounds
     mpc-cli # command-line mpd client
     ncmpcpp # a mpd client with a UI
     networkmanagerapplet # provide GUI app: nm-connection-editor
 
-    xfce.thunar # xfce4's file manager
   ];
 
   security.pam.services.swaylock = { };

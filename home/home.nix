@@ -45,7 +45,7 @@ let
       pinnedForti
       procs
       qimgv
-      qpdfview
+      evince
       ripgrep
       rustfmt
       scala-cli
@@ -62,6 +62,8 @@ let
       util-linux
       mongosh
       pavucontrol
+      networkmanager_dmenu # networkmanager on dmenu
+      networkmanagerapplet # networkmanager applet
     ];
 in
 {
@@ -80,7 +82,7 @@ in
     mimeApps = {
       enable = true;
       defaultApplications = {
-        pdf = "qpdfview";
+        pdf = "evince";
         jpg = "qimgv";
         png = "qimgv";
       };
