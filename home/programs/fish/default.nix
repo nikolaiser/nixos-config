@@ -21,10 +21,10 @@
       cat = "bat";
       nano = "micro";
       #ga = "git add";
-      #gc = "git commit";
+      gc = "git commit";
       #gco = "git checkout";
-      #gp = "git push";
-      #ps = "${pkgs.procs}/bin/procs";
+      gp = "git push";
+      ps = "${pkgs.procs}/bin/procs";
     };
   };
 
