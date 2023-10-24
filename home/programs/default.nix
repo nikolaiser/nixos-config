@@ -1,6 +1,6 @@
 [
   ./git
-  ./mcfly
+  ./atuin
   ./neovim-ide
   ./wofi
   ./tms
