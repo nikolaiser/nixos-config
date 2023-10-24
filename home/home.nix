@@ -55,7 +55,6 @@ let
       sops
       telegram-desktop
       tldr
-      wezterm
       xclip
       yazi
       (sbt.override { jre = jdk17; })
@@ -65,6 +64,7 @@ let
       pavucontrol
       networkmanager_dmenu # networkmanager on dmenu
       networkmanagerapplet # networkmanager applet
+      neofetch
     ];
 in
 {
@@ -100,10 +100,6 @@ in
       EDITOR = "nvim";
     };
 
-    file."${configHome}/wezterm/wezterm.lua" = {
-      source = ./programs/wezterm/wezterm.lua;
-      recursive = true;
-    };
   };
 
   fonts.fontconfig.enable = true;

@@ -8,4 +8,5 @@
   ./hyprland
   ./fish
   ./hacl
+  ./alacritty
 ]
