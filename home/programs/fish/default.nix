@@ -20,11 +20,11 @@
       htop = "${pkgs.bottom}/bin/btm";
       cat = "bat";
       nano = "micro";
-      ga = "git add";
-      gc = "git commit";
-      gco = "git checkout";
-      gp = "git push";
-      ps = "${pkgs.procs}/bin/procs";
+      #ga = "git add";
+      #gc = "git commit";
+      #gco = "git checkout";
+      #gp = "git push";
+      #ps = "${pkgs.procs}/bin/procs";
     };
   };
 

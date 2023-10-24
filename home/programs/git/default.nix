@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   gitConfig = {
     core = {
       editor = "nvim";
@@ -9,7 +10,8 @@
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";
-in {
+in
+{
   home.packages = with pkgs.gitAndTools; [
     diff-so-fancy # git diff with colors
     hub # github command-line client
@@ -46,5 +48,11 @@ in {
       userEmail = "nickolayser@gmail.com";
       userName = "nikolaiser";
     }
-    // (pkgs.sxm.git or {});
+    // (pkgs.sxm.git or { });
+
+  programs.scmpuff = {
+    enable = true;
+    enableFishIntegration = true;
+    enableAliases = true;
+  };
 }
