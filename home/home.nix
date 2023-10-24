@@ -33,7 +33,6 @@ let
       gcc
       go
       ghcWithPkgs
-      gnome.nautilus
       helm
       jq
       kubectl
@@ -65,6 +64,8 @@ let
       networkmanager_dmenu # networkmanager on dmenu
       networkmanagerapplet # networkmanager applet
       neofetch
+      ranger
+      cinnamon.nemo
     ];
 in
 {
@@ -83,9 +84,9 @@ in
     mimeApps = {
       enable = true;
       defaultApplications = {
-        pdf = "evince";
-        jpg = "qimgv";
-        png = "qimgv";
+        "application/pdf" = "evince";
+        "image/jpg" = "qimgv";
+        "image/png" = "qimgv";
       };
     };
   };
