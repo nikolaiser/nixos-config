@@ -33,7 +33,7 @@ let
       gcc
       go
       ghcWithPkgs
-      helm
+      kubernetes-helm
       jq
       kubectl
       kubectx
