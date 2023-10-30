@@ -22,6 +22,7 @@ let
   defaultPkgs = with pkgs;
     [
       arandr
+      act
       bat # cat alternative
       bottom # alternative to htop
       chromium
@@ -66,6 +67,7 @@ let
       neofetch
       ranger
       cinnamon.nemo
+      gnupg
     ];
 in
 {
