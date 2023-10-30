@@ -111,5 +111,7 @@ in
 
   news.display = "silent";
 
+  services.network-manager-applet.enable = true;
+
   services.mpris-proxy.enable = true;
 }

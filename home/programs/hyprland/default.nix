@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [ ];
@@ -29,4 +29,75 @@
     "WLR_NO_HARDWARE_CURSORS" = "1";
     "WLR_EGL_NO_MODIFIRES" = "1";
   };
+
+  systemd.user.targets.hyprland-session = {
+    Unit = {
+      Description = "Hyprland compositor session";
+      Documentation = [ "man:systemd.special(7)" ];
+      BindsTo = [ "graphical-session.target" ];
+      Wants = [ "graphical-session-pre.target" ];
+      After = [ "graphical-session-pre.target" ];
+    };
+  };
+
+
+
+  programs.waybar = {
+    enable = true;
+    style = ./waybar/style.css;
+
+    settings = {
+      "bar" = {
+        layer = "top";
+        position = "top";
+        exclusive = true;
+        passthrough = false;
+        mod = "dock";
+        height = 30;
+
+        modules-left = [ "hyprland/workspaces" ];
+        modules-center = [ "clock" "pulseaudio" "pulseaudio#microphone" ];
+        modules-right = [ "network" "cpu" "memory" "tray" "hyprland/language" ];
+
+
+
+
+        "pulseaudio" = {
+          "format" = "{icon} {volume}% {format_source}";
+          "format-bluetooth" = "{icon} {volume}% {format_source}";
+          "format-bluetooth-muted" = "   {volume}% {format_source}";
+          "format-muted" = "  {format_source}";
+          "format-source" = " ";
+          "format-source-muted" = " ";
+          "format-icons" = {
+            "headphone" = " ";
+            "hands-free" = " ";
+            "headset" = " ";
+            "phone" = " ";
+            "portable" = " ";
+            "car" = " ";
+            "default" = [
+              " "
+              " "
+              " "
+            ];
+          };
+          "tooltip-format" = "{desc}, {volume}%";
+        };
+
+        "pulseaudio#microphone" = {
+          "format" = "{format_source}";
+          "format-source" = "Mic: {volume}%";
+          "format-source-muted" = "Mic: Muted";
+          "scroll-step" = 5;
+        };
+      };
+    };
+
+    systemd.enable = true;
+    systemd.target = " default.target ";
+
+  };
+
 }
+
