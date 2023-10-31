@@ -57,7 +57,7 @@
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" "pulseaudio" "pulseaudio#microphone" ];
-        modules-right = [ "network" "cpu" "memory" "tray" "hyprland/language" ];
+        modules-right = [ "network" "battery" "tray" "hyprland/language" ];
 
 
 
