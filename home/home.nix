@@ -68,6 +68,7 @@ let
       ranger
       cinnamon.nemo
       gnupg
+      libsForQt5.plasma-pa
     ];
 in
 {
@@ -108,6 +109,13 @@ in
   fonts.fontconfig.enable = true;
 
   systemd.user.startServices = "sd-switch";
+
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
 
   news.display = "silent";
 

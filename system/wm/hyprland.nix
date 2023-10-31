@@ -14,6 +14,11 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   services = {
+
+    gnome = {
+      at-spi2-core.enable = true;
+    };
+
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
     xserver = {
@@ -35,6 +40,7 @@
       };
     };
   };
+
 
   programs = {
     hyprland = {

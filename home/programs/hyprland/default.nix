@@ -32,14 +32,20 @@
 
   systemd.user.targets.hyprland-session = {
     Unit = {
-      Description = "Hyprland compositor session";
-      Documentation = [ "man:systemd.special(7)" ];
+      Description = "hyprland compositor session";
       BindsTo = [ "graphical-session.target" ];
-      Wants = [ "graphical-session-pre.target" ];
-      After = [ "graphical-session-pre.target" ];
+      Wants = [
+        "graphical-session-pre.target"
+        "xdg-desktop-autostart.target"
+      ];
+      After = [
+        "graphical-session-pre.target"
+      ];
+      Before = [
+        "xdg-desktop-autostart.target"
+      ];
     };
   };
-
 
 
   programs.waybar = {
@@ -95,7 +101,7 @@
     };
 
     systemd.enable = true;
-    systemd.target = " default.target ";
+    systemd.target = "hyprland-session.target";
 
   };
 
