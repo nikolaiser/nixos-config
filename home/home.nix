@@ -69,6 +69,7 @@ let
       cinnamon.nemo
       gnupg
       libsForQt5.plasma-pa
+      kubelogin-oidc
     ];
 in
 {
