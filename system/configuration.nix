@@ -50,6 +50,8 @@
     git
   ];
 
+  environment.etc."ppp/options".text = "ipcp-accept-remote";
+
   programs.java = {
     enable = true;
     package = pkgs.jdk17;

@@ -59,7 +59,7 @@
         exclusive = true;
         passthrough = false;
         mod = "dock";
-        height = 30;
+        height = 44;
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" "pulseaudio" "pulseaudio#microphone" ];
