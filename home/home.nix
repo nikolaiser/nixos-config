@@ -70,6 +70,7 @@ let
       gnupg
       libsForQt5.plasma-pa
       kubelogin-oidc
+      unzip
     ];
 in
 {
