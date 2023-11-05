@@ -71,6 +71,8 @@ let
       libsForQt5.plasma-pa
       kubelogin-oidc
       unzip
+      thunderbird
+      jetbrains.idea-community
     ];
 in
 {

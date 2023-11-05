@@ -9,4 +9,5 @@
   ./fish
   ./hacl
   ./alacritty
+  ./direnv
 ]
