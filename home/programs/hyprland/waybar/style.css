@@ -30,6 +30,7 @@
 #custom-power-menu,
 #custom-updates,
 #language,
+#custom-powermenu,
 #window,
 #custom-weather,
 #custom-weather.severe,
@@ -251,6 +252,10 @@ window#waybar.hidden {
 }
 
 #language {
+  color: #8aadf4;
+}
+
+#custom-power-menu {
   color: #8aadf4;
 }
 

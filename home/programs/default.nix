@@ -10,4 +10,5 @@
   ./hacl
   ./alacritty
   ./direnv
+  ./swaylock
 ]

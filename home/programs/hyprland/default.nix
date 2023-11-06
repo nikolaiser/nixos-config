@@ -9,6 +9,12 @@
   };
 
 
+  home.file.".config/wlogout" = {
+    source = ./wlogout;
+    recursive = true;
+  };
+
+
   home.packages = with pkgs; [
     grim
     slurp
@@ -63,7 +69,7 @@
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" "pulseaudio" "pulseaudio#microphone" ];
-        modules-right = [ "network" "battery" "tray" "hyprland/language" ];
+        modules-right = [ "network" "battery" "tray" "hyprland/language" "custom/powermenu" ];
 
 
 
@@ -96,6 +102,12 @@
           "format-source" = "Mic: {volume}%";
           "format-source-muted" = "Mic: Muted";
           "scroll-step" = 5;
+        };
+
+        "custom/powermenu" = {
+          "format" = "  ";
+          "on-click" = "$HOME/.config/hypr/scripts/wlogout";
+          "tooltip" = "false";
         };
       };
     };
