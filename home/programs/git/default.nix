@@ -40,7 +40,7 @@ in
         "*.metals.sbt"
         "*metals.sbt"
         "*.direnv"
-        "*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
+        #"*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
         "*hie.yaml" # ghcide files
         "*.mill-version" # used by metals
         "*.jvmopts" # should be local to every project

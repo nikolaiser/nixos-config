@@ -710,11 +710,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1697878833,
-        "narHash": "sha256-pKkuece9tAnIlHM4iMHk8ne5MHRo2Hap/EUGaGkLsK0=",
+        "lastModified": 1702631771,
+        "narHash": "sha256-p0SLMOkLqpPr/6pLCMJSQqOlUrItwzM7quGhPcilHwQ=",
         "owner": "nikolaiser",
         "repo": "nvim-config",
-        "rev": "5c582f0194e28fe8ea2a06a81de94826c0a082a6",
+        "rev": "9c369d40ad8d306b8d15df8daf840b4e21020220",
         "type": "github"
       },
       "original": {

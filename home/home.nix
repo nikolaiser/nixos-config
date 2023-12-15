@@ -25,7 +25,7 @@ let
       act
       bat # cat alternative
       bottom # alternative to htop
-      chromium
+      #chromium
       discord
       docker-compose
       eza # better ls
@@ -73,6 +73,7 @@ let
       unzip
       thunderbird
       jetbrains.idea-community
+      obsidian
     ];
 in
 {

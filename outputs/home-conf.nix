@@ -6,7 +6,7 @@ with inputs; let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    #chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
 
   imports = [
